@@ -1,6 +1,6 @@
 
 export default function Home() {
   return (
-    <div className='text-pink-500'>My personal music app</div>
+    <div className='text-purple-500'>My personal music app</div>
   )
 }
