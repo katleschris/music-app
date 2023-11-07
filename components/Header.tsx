@@ -1,8 +1,9 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { twMerge } from 'tailwind-merge';
-import { fileURLToPath } from 'url';
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx'
+import { HiHome } from 'react-icons/hi';
+import { BiSearch } from 'react-icons/bi';
 
 interface HeaderProps {
     children: React.ReactNode;
@@ -63,6 +64,38 @@ const Header: React.FC<HeaderProps> = ({
                         <RxCaretRight size={35} className='text-white'/>
                     </button>
                 </div>
+                <div className= 'flex md:hidden gap-x-2 items-center'>
+                    <button 
+                        className='
+                        rounded-full
+                        p-2
+                        bg-white
+                        flex
+                        items-center
+                        hover:opacity-75transition
+                        ' 
+                    >
+                        <HiHome className='text-black' />
+                    </button>
+                    <button 
+                        className='
+                        rounded-full
+                        p-2
+                        bg-white
+                        flex
+                        items-center
+                        hover:opacity-75transition
+                        ' 
+                    >
+                        <BiSearch className='text-black' />
+                    </button>
+                </div>
+                <div
+                className='
+                flex
+                justify-between
+                items-center
+                gap-x-4'></div>
             </div>
         </div>
     )
