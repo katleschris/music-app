@@ -99,7 +99,9 @@ const Header: React.FC<HeaderProps> = ({
                 gap-x-4'>
                     <>
                         <div>
-                            <Button />
+                            <Button>
+                                Sign up
+                            </Button>
                         </div>
                     </>
                 </div>
