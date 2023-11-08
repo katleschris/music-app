@@ -121,7 +121,8 @@ const Header: React.FC<HeaderProps> = ({
                     </>
                 </div>
             </div>
+            {children}
         </div>
-    )
+    );
 }
 export default Header
