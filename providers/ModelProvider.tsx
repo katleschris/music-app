@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState} from 'react'
-import Model from '@/components/Model';
+import AuthModel from '@/components/AuthModel';
 
 const ModelProvider = () => {
     const [isMounted, setIsMounted] = useState(false);
@@ -15,13 +15,7 @@ const ModelProvider = () => {
 
     return (
         <>
-            <Model 
-            title='model'
-            description='descriptionTest'
-            isOpen
-            onChange={() => {}}>
-                Children!
-            </Model>
+           <AuthModel />
         </>
     );
 }
