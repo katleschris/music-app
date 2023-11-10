@@ -15,7 +15,13 @@ const ModelProvider = () => {
 
     return (
         <>
-            <Model />
+            <Model 
+            title='model'
+            description='descriptionTest'
+            isOpen
+            onChange={() => {}}>
+                Children!
+            </Model>
         </>
     );
 }
