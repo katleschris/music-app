@@ -11,3 +11,5 @@ const useAuthModel = create<AuthModelStore>((set) => ({
     onOpen: () => set({ isOpen: true }),
     onClose: () => set({ isOpen: false }),
 }))
+
+export default useAuthModel;
