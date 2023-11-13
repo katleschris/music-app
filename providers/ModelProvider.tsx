@@ -1,6 +1,8 @@
 'use client'
 import { useEffect, useState} from 'react'
+
 import AuthModel from '@/components/AuthModel';
+import UploadModel from '@/components/UploadModel';
 
 const ModelProvider = () => {
     const [isMounted, setIsMounted] = useState(false);
@@ -16,6 +18,7 @@ const ModelProvider = () => {
     return (
         <>
            <AuthModel />
+           <UploadModel />
         </>
     );
 }
