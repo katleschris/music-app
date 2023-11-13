@@ -7,6 +7,7 @@ import SupabaseProvider from '@/providers/SupabaseProvider'
 import Sidebar from '@/components/Sidebar'
 import UserProvider from '@/providers/UserProvider'
 import ModelProvider from '@/providers/ModelProvider'
+import ToasterProvider from '@/providers/ToasterProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
             <ModelProvider />
