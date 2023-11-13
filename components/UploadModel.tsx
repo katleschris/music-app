@@ -40,6 +40,7 @@ const UploadModel = () => {
         >
             <form
                 onSubmit={handleSubmit(onSubmit)}
+                className='flex flex-col gap-y-4'
             >
                 <Input
                     id= 'title'
@@ -47,6 +48,36 @@ const UploadModel = () => {
                     {...register('title', { required: true})}
                     placeholder='Song title'
                 />
+                <Input
+                    id= 'artist'
+                    disabled = {isLoading}
+                    {...register('artist', { required: true})}
+                    placeholder='Artist/singer'
+                />
+                <div>
+                    <div className='pb-1'>
+                        Select mp3 file
+                    </div>
+                    <Input
+                    id= 'song'
+                    type='file'
+                    disabled = {isLoading}
+                    accept='.mp3'
+                    {...register('song', { required: true})}
+                />
+                </div>
+                <div>
+                    <div className='pb-1'>
+                        Select image
+                    </div>
+                    <Input
+                    id= 'image'
+                    type='file'
+                    disabled = {isLoading}
+                    accept='image/*'
+                    {...register('image', { required: true})}
+                />
+                </div>
             </form>
         </Model>
     )
