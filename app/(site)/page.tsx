@@ -1,8 +1,11 @@
 import Header from '../../components/Header'
 import ListItem from '../../components/ListItem'
+import getSongs from '@/actions/getSongs';
 
+export const revalidate = 0;
 
-export default function Home() {
+export default async function Home() {
+  const songs = await getSongs()
   return (
     <div className='
       bg-neutral-900
@@ -42,7 +45,8 @@ export default function Home() {
         <h1 className='text-white text-2xl font-semibold'>Latest songs</h1>
       </div>
       <div>
-        List of Songs!
+       {songs.map((song)   => <div>{song.title}</div>)}
+        
       </div>
     </div>
     </div>
