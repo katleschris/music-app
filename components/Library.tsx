@@ -3,12 +3,19 @@
 import useAuthModel from '@/hooks/useAuthModel'
 import { useUser } from '@/hooks/useUser'
 import useUploadModel from '@/hooks/useUploadModel'
+import MediaItem from './MediaItem'
 
 import { TbPlaylist} from 'react-icons/tb' 
 import { AiOutlinePlus} from 'react-icons/ai'
+import { Song } from '@/types'
 
+interface LibraryProps {
+    songs: Song[];
+}
 
-const Library = () => {
+const Library: React.FC<LibraryProps> = ({
+    songs
+}) => {
 const authModel = useAuthModel();
 const { user } = useUser();
 const uploadModel = useUploadModel()
@@ -54,7 +61,13 @@ const uploadModel = useUploadModel()
             gap-y-2
             mt-4
             px-3'>
-                list of songs
+                {songs.map((item) => (
+                    <MediaItem
+                    onClick={() => {}}
+                    key={item.id}
+                    data={item}
+                    />
+                ))}
             </div>
         </div>
     )
