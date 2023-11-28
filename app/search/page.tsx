@@ -28,6 +28,7 @@ const Search = async ({ searchParams }: SearchProps) => {
                     <SearchInput />
                 </div>
             </Header>
+            
         </div>
     )
 }
