@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 
 import SupabaseProvider from '@/providers/SupabaseProvider'
 import Sidebar from '@/components/Sidebar'
+import Player from '@/components/Player'
 import UserProvider from '@/providers/UserProvider'
 import ModalProvider from '@/providers/ModalProvider'
 import ToasterProvider from '@/providers/ToasterProvider'
@@ -35,6 +36,7 @@ export default async function RootLayout({
             <Sidebar songs={userSongs}>
               {children}
             </Sidebar>
+            <Player />
           </UserProvider>
         </SupabaseProvider>
       </body>
