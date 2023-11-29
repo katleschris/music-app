@@ -6,7 +6,7 @@ import {useState, useEffect} from 'react'
 import {AiFillHeart, AiOutlineHeart} from 'react-icons/ai'
 import {toast} from 'react-hot-toast'
 
-import useAuthModel from '@/hooks/useAuthModel'
+import useAuthModal from '@/hooks/useAuthModal'
 import {useUser} from '@/hooks/useUser'
 
 interface LikeButtonProps {
@@ -19,7 +19,7 @@ const LikeButton: React.FC<LikeButtonProps> = ({
 const router = useRouter();
 const { supabaseClient} = useSessionContext();
 
-    const authModal = useAuthModel();
+    const authModal = useAuthModal();
     const { user } = useUser();
 
     const [isLiked, setIsLiked] = useState(false);
@@ -85,7 +85,7 @@ const { supabaseClient} = useSessionContext();
     return (
         <button className=' hover:opacity-75  transition'
             onClick={handleLike}>
-            <Icon color={isLiked? 'pink' : 'white'} size={25} />
+            <Icon color={isLiked? 'purple' : 'white'} size={25} />
         </button>
     )
 }

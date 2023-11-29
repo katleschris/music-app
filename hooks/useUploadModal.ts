@@ -1,15 +1,15 @@
 import { create } from 'zustand'
 
-interface UploadModelStore {
+interface UploadModalStore {
     isOpen: boolean;
     onOpen: () => void;
     onClose: () => void;
 }
 
-const useUploadModel = create<UploadModelStore>((set) => ({
+const useUploadModal = create<UploadModalStore>((set) => ({
     isOpen: false,
     onOpen: () => set({ isOpen: true }),
     onClose: () => set({ isOpen: false }),
 }))
 
-export default useUploadModel ;
+export default useUploadModal ;

@@ -1,8 +1,8 @@
 'use client'
 
-import useAuthModel from '@/hooks/useAuthModel'
+import useAuthModal from '@/hooks/useAuthModal'
 import { useUser } from '@/hooks/useUser'
-import useUploadModel from '@/hooks/useUploadModel'
+import useUploadModal from '@/hooks/useUploadModal'
 import MediaItem from './MediaItem'
 import { Song } from '@/types'
 
@@ -16,16 +16,16 @@ interface LibraryProps {
 const Library: React.FC<LibraryProps> = ({
     songs
 }) => {
-const authModel = useAuthModel();
+const authModal = useAuthModal();
 const { user } = useUser();
-const uploadModel = useUploadModel()
+const uploadModal = useUploadModal()
 
     const onClick = () =>{
         if (!user) {
-            return authModel.onOpen();
+            return authModal.onOpen();
         }
 
-        return uploadModel.onOpen();
+        return uploadModal.onOpen();
     }
     return (
         <div className="flex flex-col">

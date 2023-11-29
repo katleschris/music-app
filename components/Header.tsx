@@ -8,7 +8,7 @@ import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import { toast} from 'react-hot-toast'
 
 import Button from './Button';
-import useAuthModel from '@/hooks/useAuthModel';
+import useAuthModal from '@/hooks/useAuthModal';
 import { useUser } from '@/hooks/useUser';
 import { FaUserAlt } from 'react-icons/fa';
 
@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({
     children,
     className,
 }) => {
-    const authModel = useAuthModel()
+    const authModal = useAuthModal()
     const router = useRouter();
 
     const supabaseClient = useSupabaseClient();
@@ -131,7 +131,7 @@ const Header: React.FC<HeaderProps> = ({
                         <>
                             <div>
                                 <Button
-                                onClick={authModel.onOpen}
+                                onClick={authModal.onOpen}
                                 className=' 
                                 bg-transparent
                                 text-neutral-300
@@ -141,7 +141,7 @@ const Header: React.FC<HeaderProps> = ({
                             </div>
                             <div>
                                 <Button
-                                onClick={authModel.onOpen}
+                                onClick={authModal.onOpen}
                                 className=' 
                                 bg-white
                                 px-6

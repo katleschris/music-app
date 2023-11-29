@@ -7,15 +7,15 @@ import uniqid from 'uniqid'
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import { useRouter } from 'next/navigation';
 
-import Model from './Model'
-import useUploadModel from '@/hooks/useUploadModel'
+import Modal from './Modal'
+import useUploadModal from '@/hooks/useUploadModal'
 import Input from './Input';
 import Button from './Button';
 import {useUser}  from '@/hooks/useUser';
 
-const UploadModel = () => {
+const UploadModal = () => {
     const [isLoading, setIsLoading] = useState(false)
-    const uploadModel = useUploadModel();
+    const uploadModal = useUploadModal();
     const { user} = useUser()
     const supabaseClient = useSupabaseClient();
     const router = useRouter();
@@ -32,7 +32,7 @@ const UploadModel = () => {
     const onChange = (open: boolean) => {
         if(!open){
             reset();
-            uploadModel.onClose();
+            uploadModal.onClose();
         }
     }
 
@@ -102,7 +102,7 @@ const UploadModel = () => {
                     setIsLoading(false);
                     toast.success('Song created!');
                     reset();
-                    uploadModel.onClose();
+                    uploadModal.onClose();
 
         }catch (error) {
             toast.error('something went wrong');
@@ -112,10 +112,10 @@ const UploadModel = () => {
     }
 
     return (
-        <Model
+        <Modal
             title='Add a song'
             description='Upload an mp3 file'
-            isOpen = {uploadModel.isOpen}
+            isOpen = {uploadModal.isOpen}
             onChange={onChange}
         >
             <form
@@ -162,8 +162,8 @@ const UploadModel = () => {
                     Create
                 </Button>
             </form>
-        </Model>
+        </Modal>
     )
 }
 
-export default UploadModel
+export default UploadModal

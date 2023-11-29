@@ -1,10 +1,10 @@
 'use client'
 import { useEffect, useState} from 'react'
 
-import AuthModel from '@/components/AuthModel';
-import UploadModel from '@/components/UploadModel';
+import AuthModal from '@/components/AuthModal';
+import UploadModal from '@/components/UploadModal';
 
-const ModelProvider = () => {
+const ModalProvider = () => {
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
@@ -17,10 +17,10 @@ const ModelProvider = () => {
 
     return (
         <>
-           <AuthModel />
-           <UploadModel />
+           <AuthModal />
+           <UploadModal />
         </>
     );
 }
 
-export default ModelProvider
+export default ModalProvider

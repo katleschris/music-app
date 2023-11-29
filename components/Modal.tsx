@@ -1,7 +1,7 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { IoMdClose} from 'react-icons/io'
 
-interface ModelProps {
+interface ModalProps {
     isOpen: boolean;
     onChange: (open: boolean) => void;
     title: string;
@@ -9,7 +9,7 @@ interface ModelProps {
     children: React.ReactNode;
 }
 
-const Model: React.FC<ModelProps> = ({
+const Modal: React.FC<ModalProps> = ({
     isOpen,
     onChange,
     title,
@@ -97,4 +97,4 @@ const Model: React.FC<ModelProps> = ({
     );
 }
 
-export default Model
+export default Modal

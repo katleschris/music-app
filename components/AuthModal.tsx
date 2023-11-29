@@ -1,7 +1,7 @@
 'use client'
 
-import Model from './Model';
-import useAuthModel from '@/hooks/useAuthModel';
+import Modal from './Modal';
+import useAuthModal from '@/hooks/useAuthModal';
 import { useSessionContext, useSupabaseClient } from '@supabase/auth-helpers-react';
 import { useRouter } from 'next/navigation';
 import { Auth } from '@supabase/auth-ui-react';
@@ -9,11 +9,11 @@ import { ThemeSupa} from '@supabase/auth-ui-shared'
 import {useEffect} from 'react'
 
 
-const AuthModel = () => {
+const AuthModal = () => {
     const supabaseClient = useSupabaseClient();
     const router = useRouter();
     const { session} = useSessionContext()
-    const { onClose, isOpen} = useAuthModel();
+    const { onClose, isOpen} = useAuthModal();
 
     useEffect(() => {
         if (session) {
@@ -30,7 +30,7 @@ const AuthModel = () => {
     }
 
     return (
-        <Model 
+        <Modal 
         title='Welcome back'
         description='Login to your account'
         isOpen = {isOpen}
@@ -51,8 +51,8 @@ const AuthModel = () => {
                     }
                 }
             } />
-        </Model>
+        </Modal>
     )
 }
 
-export default AuthModel
+export default AuthModal
