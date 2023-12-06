@@ -59,7 +59,7 @@ const upsertPriceRecord = async (price: Stripe.Price) => {
     console.log(`Price inserted/updated: ${price.id}`)
 }
 
-const createOrRetrieveACustomer = async ({
+const createOrRetrieveCustomer = async ({
     email,
     uuid
 }: {
@@ -116,9 +116,9 @@ const copyBillingDetailsToCustomer = async (
       })
       .eq('id', uuid);
     if (error) throw error;
-  };
+};
   
-  const manageSubscriptionStatusChange = async (
+const manageSubscriptionStatusChange = async (
     subscriptionId: string,
     customerId: string,
     createAction = false
@@ -188,4 +188,11 @@ const copyBillingDetailsToCustomer = async (
         uuid,
         subscription.default_payment_method as Stripe.PaymentMethod
       );
-  };
+};
+
+export {
+    upsertProductRecord,
+    upsertPriceRecord,
+    createOrRetrieveCustomer,
+    manageSubscriptionStatusChange
+}
