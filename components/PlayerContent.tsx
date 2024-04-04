@@ -89,7 +89,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
     };
 
     const toggleMute = () => {
-        if (volume == 0){
+        if (volume === 0){
             setVolume(1);
         } else {
             setVolume(0);
@@ -97,11 +97,8 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
     }
 
     return (
-        <div className='grid grid-cols-2 md:grid-cols-3 h-full'>q
-            <div className='
-            flex
-            w-full
-            justify-start'>
+        <div className='grid grid-cols-2 md:grid-cols-3 h-full'>
+            <div className=' flex w-full justify-start'>
                 <div className='flex items-center gap-x-4'>
                     <MediaItem data={song}/>
                     <LikeButton songId = {song.id} />
@@ -181,7 +178,8 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
             </div>
             <div className='hidden md:flex w-full justify-end pr-2'>
                 <div className='flex items-center gap-x-2 w-[120px]'>
-                    <VolumeIcon 
+
+                    <VolumeIcon  
                         onClick={toggleMute}
                         className='cursor-pointer'
                         size={34}
