@@ -76,7 +76,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
         sound?.play();
         
         return () => {
-            sound?.upload();
+            sound?.unload();
         }
     }, [sound]);
 
